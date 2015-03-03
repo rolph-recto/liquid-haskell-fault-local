@@ -53,6 +53,8 @@ instance Show Expr where
     show (Greater e1 e2)        = "(" ++ (show e1) ++ " > " ++ (show e2) ++ ")"
     show (GreaterEqual e1 e2)   = "(" ++ (show e1) ++ " >= " ++ (show e2) ++ ")"
     show (If pred e1 e2)        = "if " ++ (show pred) ++ " then " ++ (show e1) ++ " else " ++ (show e2)
+    show (Let var e1 e2)        = "let " ++ var ++ " = " ++ (show e1) ++ " in " ++ (show e2)
+    show (App e1 e2)            = (show e1) ++ " " ++ (show e2)
 
 -- return the size of the expression
 -- this is used for constraint weighting
